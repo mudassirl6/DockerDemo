@@ -13,3 +13,9 @@ venv/
 # Docker-related files
 *.pyc
 __pycache__/
+
+# Log files
+*.log
+
+# Environment files
+*.env
