@@ -1,65 +1,59 @@
-DockerDemo
+# DockerDemo
 
 This project demonstrates a simple Dockerized application comprising a frontend and a backend, orchestrated using Docker Compose.
 
-Project Structure
+## Project Structure
 
-frontend/: Contains the frontend application code.
+* **frontend/**: Contains the frontend application code.
+* **backend/**: Contains the backend application code.
+* **docker-compose.yaml**: Defines services, networks, and volumes for Docker Compose.
 
-backend/: Contains the backend application code.
+## Prerequisites
 
-docker-compose.yaml: Defines services, networks, and volumes for Docker Compose.
+* [Docker](https://www.docker.com/get-started) installed on your machine.
+* [Docker Compose](https://docs.docker.com/compose/install/) installed.
 
-Prerequisites
+## Getting Started
 
-Docker installed on your machine.
+1. **Clone the repository**:
 
-Docker Compose installed.
+   ```bash
+   git clone https://github.com/mudassirl6/DockerDemo.git
+   cd DockerDemo
+   ```
 
-Getting Started
+2. **Build and run the containers**:
 
-Clone the repository:
+   ```bash
+   docker-compose up --build
+   ```
 
-git clone https://github.com/mudassirl6/DockerDemo.git
-cd DockerDemo
+   This command builds the images and starts the containers as defined in `docker-compose.yaml`.
 
-Build and run the containers:
+3. **Access the application**:
 
-docker-compose up --build
+   * Frontend: [http://localhost:3000](http://localhost:3000)
+   * Backend API: [http://localhost:5000](http://localhost:5000)
 
-This command builds the images and starts the containers as defined in docker-compose.yaml.
+   *Note: The actual ports may vary depending on your `docker-compose.yaml` configuration.*
 
-Access the application:
+## Features
 
-Frontend: http://localhost:3000
+* **Modular Architecture**: Separate containers for frontend and backend for better scalability and maintenance.
+* **Easy Orchestration**: Utilizes Docker Compose for simplified container management.
+* **Isolation**: Ensures that the frontend and backend run in isolated environments.
 
-Backend API: http://localhost:5000
+## Technologies Used
 
-Note: The actual ports may vary depending on your docker-compose.yaml configuration.
+* Docker: Containerization platform.
+* Docker Compose: Tool for defining and running multi-container Docker applications.
+* Python: Backend programming language.
+* \[Specify Frontend Technology]: Frontend framework/library used.
 
-Features
-
-Modular Architecture: Separate containers for frontend and backend for better scalability and maintenance.
-
-Easy Orchestration: Utilizes Docker Compose for simplified container management.
-
-Isolation: Ensures that the frontend and backend run in isolated environments.
-
-Technologies Used
-
-Docker: Containerization platform.
-
-Docker Compose: Tool for defining and running multi-container Docker applications.
-
-Python: Backend programming language.
-
-[Specify Frontend Technology]: Frontend framework/library used.
-
-Contributing
+## Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request for any enhancements or bug fixes.
 
-License
+## License
 
-This project is licensed under the MIT License.
-
+This project is licensed under the [MIT License](LICENSE).
