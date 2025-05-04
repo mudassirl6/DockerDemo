@@ -1,0 +1,15 @@
+# Node.js dependencies
+node_modules/
+
+# Python virtual environment
+venv/
+
+# macOS system files
+.DS_Store
+
+# VSCode settings
+.vscode/
+
+# Docker-related files
+*.pyc
+__pycache__/
