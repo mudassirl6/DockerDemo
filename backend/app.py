@@ -6,6 +6,10 @@ app = Flask(__name__)
 # Enable CORS for the Flask app
 CORS(app)
 
+@app.route('/', methods=['GET'])
+def health_check():
+    return "<h1>Backend is running</h1>", 200
+
 @app.route('/submit', methods=['POST'])
 def handle_form_submission():
     # Handle form-encoded data
@@ -20,4 +24,4 @@ def handle_form_submission():
     return jsonify(response)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
