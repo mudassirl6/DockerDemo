@@ -4,7 +4,7 @@ services:
   backend:
     build:
       context: ./backend
-    image: mudassirdoc12/flask-backend:latest  # Specify the backend image
+    image: mudassirdoc12/flask-backend:latest
     ports:
       - "5000:5000"
     networks:
@@ -13,11 +13,12 @@ services:
   frontend:
     build:
       context: ./frontend
-    image: mudassirdoc12/express-frontend:latest  # Specify the frontend image
+    image: mudassirdoc12/express-frontend:latest
     ports:
-      - "3001:3000"
+      - "3000:3000"
     networks:
       - app-network
+    restart: always
 
 networks:
   app-network:
