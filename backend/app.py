@@ -23,5 +23,25 @@ def handle_form_submission():
     }
     return jsonify(response)
 
+@app.route('/api/users', methods=['GET'])
+def get_users():
+    # Example data for users
+    users = [
+        {"id": 1, "name": "Alice"},
+        {"id": 2, "name": "Bob"},
+        {"id": 3, "name": "Charlie"}
+    ]
+    return jsonify(users)
+
+@app.route('/api/products', methods=['GET'])
+def get_products():
+    # Example data for products
+    products = [
+        {"id": 101, "name": "Laptop", "price": 999.99},
+        {"id": 102, "name": "Smartphone", "price": 499.99},
+        {"id": 103, "name": "Tablet", "price": 299.99}
+    ]
+    return jsonify(products)
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
