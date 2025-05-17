@@ -1,20 +1,17 @@
 # Use the official Python image as the base image
 FROM python:3.10-slim
 
-# Set the working directory in the container
+# Set the working directory
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
+# Copy files
 COPY . /app
 
-# Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir flask flask_cors
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt gunicorn flask flask_cors
 
-# Make port 5000 available to the world outside this container
+# Expose the port
 EXPOSE 5000
 
-# Define environment variable
-ENV FLASK_APP=app.py
-
-# Run app.py when the container launches
-CMD ["python", "-m", "flask", "run", "--host=0.0.0.0"]
+# Command to run the app using Gunicorn
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
