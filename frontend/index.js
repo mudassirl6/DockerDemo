@@ -7,7 +7,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Proxy POST /submit to Flask backend (assumes it's on port 5000)
 app.post('/submit', createProxyMiddleware({
-  target: 'http://localhost:5000', // From Node.js to Flask within ECS
+  target: 'http://backend:5000', // Use Docker Compose service name for backend
   changeOrigin: true
 }));
 
