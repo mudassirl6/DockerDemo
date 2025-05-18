@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -10,8 +11,11 @@ CORS(app)
 def health_check():
     return "<h1>Backend is running</h1>", 200
 
-@app.route('/submit', methods=['POST'])
+@app.route('/submit', methods=['GET', 'POST'])
 def handle_form_submission():
+    if request.method == 'GET':
+        return jsonify({"message": "GET method on /submit is for testing only."}), 200
+
     # Handle form-encoded data
     name = request.form.get('name')
     email = request.form.get('email')
@@ -19,7 +23,8 @@ def handle_form_submission():
     response = {
         "message": "Form submitted successfully",
         "name": name,
-        "email": email
+        "email": email,
+        "timestamp": datetime.utcnow().isoformat() + "Z"
     }
     return jsonify(response)
 
