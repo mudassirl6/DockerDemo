@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   backend:
+    platform: linux/amd64
     build:
       context: ./backend
     image: mudassirdoc12/flask-backend:latest
@@ -11,6 +12,7 @@ services:
       - app-network
 
   frontend:
+    platform: linux/amd64
     build:
       context: ./frontend
     image: mudassirdoc12/express-frontend:latest

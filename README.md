@@ -32,10 +32,22 @@ This project demonstrates a simple Dockerized application comprising a frontend 
 
 3. **Access the application**:
 
-   * Frontend: [http://localhost:3000](http://localhost:3000)
-   * Backend API: [http://localhost:5000](http://localhost:5000)
+   * Frontend: [http://localhost:3000/form](http://localhost:3000/form)
+   * Backend API: [http://localhost:5000/submit](http://localhost:5000/submit)
 
    *Note: The actual ports may vary depending on your `docker-compose.yaml` configuration.*
+
+## Ports and Their Usage
+
+| Service   | Container Port | Host Port | API Endpoint(s)         | Description                        |
+|-----------|---------------|-----------|-------------------------|------------------------------------|
+| Frontend  | 3000          | 3000*     | `/form`                 | Express app (user interface/form)  |
+| Backend   | 5000          | 5000      | `/submit`               | Flask API server (form handler)    |
+
+*If port 3000 is already in use on your host, you may need to change the host port mapping in `docker-compose.yaml` (e.g., `3001:3000`).
+
+* **Frontend**: Accessible at `http://localhost:3000/form` (or your chosen host port).
+* **Backend**: Accessible at `http://localhost:5000/submit`.
 
 ## Features
 
@@ -48,7 +60,8 @@ This project demonstrates a simple Dockerized application comprising a frontend 
 * Docker: Containerization platform.
 * Docker Compose: Tool for defining and running multi-container Docker applications.
 * Python: Backend programming language.
-* \[Specify Frontend Technology]: Frontend framework/library used.
+* Flask: Backend web framework (Python).
+* Express: Frontend web framework (Node.js).
 
 ## Contributing
 
