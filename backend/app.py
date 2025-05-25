@@ -9,7 +9,7 @@ CORS(app)
 
 @app.route('/', methods=['GET'])
 def health_check():
-    return "<h1>Backend is running</h1>", 200
+    return "<h1>Backend is running</h1><br><p>API is healthy</p><br><h1>AWS HOSTED APPLICATION</h1>", 200
 
 @app.route('/submit', methods=['GET', 'POST'])
 def handle_form_submission():
@@ -48,9 +48,5 @@ def get_products():
     ]
     return jsonify(products)
 
-@app.route('/')
-def health():
-    return "OK"
-
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0',port=8000)
