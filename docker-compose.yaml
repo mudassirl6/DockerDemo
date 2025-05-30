@@ -11,7 +11,7 @@ services:
     networks:
       - app-network
 
-  frontend:
+  frontend:  # ✅ Fixed: now under services
     platform: linux/amd64
     build:
       context: ./frontend
@@ -23,7 +23,7 @@ services:
     restart: always
     environment:
       - NODE_ENV=development
-      - API_URL=http://backend:5000/submit
+      - API_URL=http://backend:5000
 
 networks:
   app-network:

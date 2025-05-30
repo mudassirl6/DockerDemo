@@ -1,6 +1,6 @@
 # DockerDemo
 
-This project demonstrates a simple Dockerized application comprising a frontend and a backend, orchestrated using Docker Compose.
+This project demonstrates a simple Dockerized application comprising a frontend (Express) and a backend (Flask), orchestrated using Docker Compose.
 
 ## Project Structure
 
